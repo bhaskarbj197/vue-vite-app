@@ -16,17 +16,24 @@ const router = createRouter({
     {
       path: '/login',
       component: () => import('../views/Login.vue'),
+      meta: {
+        hideSidebar: true,
+      },
     },
   ],
 });
 
 router.beforeEach(async (to) => {
+  // console.log('to path: ', to.path);
   // redirect to login page if not logged in and trying to access a restricted page
-  const publicPages = ['/login', 'about'];
+  const publicPages = ['/login', '/about'];
   const authRequired = !publicPages.includes(to.path);
   const auth = localStorage.getItem('user');
 
-  if (authRequired && !auth.user) {
+  // JSON.parse(auth).jwt_token
+
+  if (authRequired && !auth) {
+    console.log('authentication required: ', authRequired);
     //auth.returnUrl = to.fullPath;
     return '/login';
   }
