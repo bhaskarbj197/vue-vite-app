@@ -1,7 +1,7 @@
 import axios from 'axios';
 import authHeader from '../util/auth-header';
 
-const API_URL = 'http://localhost:8080/api/test/';
+const API_URL = 'https://63b6610e58084a7af3b07cdf.mockapi.io/api/v1/user/';
 
 class EmployeeService {
   getPublicContent() {
@@ -9,7 +9,7 @@ class EmployeeService {
   }
 
   getUserBoard() {
-    return axios.get(API_URL + 'user', { headers: authHeader() });
+    return axios.get(API_URL + 'employees');
   }
 
   getModeratorBoard() {

@@ -20,9 +20,9 @@
         <span class="material-icons">description</span>
         <span class="text">About</span>
       </router-link>
-      <router-link to="/team" class="button">
+      <router-link to="/registration" class="button">
         <span class="material-icons">group</span>
-        <span class="text">Team</span>
+        <span class="text">Registration</span>
       </router-link>
       <router-link to="/contact" class="button">
         <span class="material-icons">email</span>
